@@ -14,7 +14,8 @@ class RequestsStrategy(object):
             self.environment.base_url + path,
             headers=headers,
             data=request_body,
-            verify=self.environment.ssl_certificate
+            verify=self.environment.ssl_certificate,
+            timeout=0.00001
         )
 
         return [response.status_code, response.text]
